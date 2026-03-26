@@ -8,8 +8,8 @@ services:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
     ports:
-      - "${RABBITMQ_PORT}:5672"
-      - "${RABBITMQ_MGMT_HOST_PORT}:15672"
+      - "${RABBITMQ_PORT}:5672" # normal access port
+      - "${RABBITMQ_MGMT_HOST_PORT}:15672" # management port
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
     healthcheck:
